@@ -59,13 +59,14 @@ function Square(props) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
+
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             history: history.concat([{
-                squares: squares,
+                squares: squares
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
@@ -89,8 +90,21 @@ function Square(props) {
           'Go to move #' + move :
           'Go to game start';
           return (
+              /*
+              if the move is equal to the step number, then that button will be bold 
+              button className={"last-move"} --> would bold all of the buttons
+              'move===this.state.stepNumber ?' --> checks to see if move is equal to stepNumber
+              className{... "last-move"} bolds the button in which move is equal to stepNumber
+              className{... : ''} leaves the other buttons where move does not equal stepNumber unbolded
+                ex. button className={"last-move"} --> would bold all of the buttons
+
+              sources: 
+                 https://reactjs.org/docs/conditional-rendering.html#inline-if-else-with-conditional-operator
+                 https://stackoverflow.com/questions/39281032/how-to-conditionally-apply-css-classes-in-react-js
+              */
+
               <li key={move}>
-                  <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                  <button className={move===this.state.stepNumber ? "last-move" : ''} onClick={() => this.jumpTo(move)}>{desc}</button>
               </li>
           );
       });
