@@ -92,15 +92,9 @@ function Square(props) {
           return (
               /*
               if the move is equal to the step number, then that button will be bold 
-              button className={"last-move"} --> would bold all of the buttons
               'move===this.state.stepNumber ?' --> checks to see if move is equal to stepNumber
-              className{... "last-move"} bolds the button in which move is equal to stepNumber
+              className{... "last-move"} bolds the button where move is equal to stepNumber
               className{... : ''} leaves the other buttons where move does not equal stepNumber unbolded
-                ex. button className={"last-move"} --> would bold all of the buttons
-
-              sources: 
-                 https://reactjs.org/docs/conditional-rendering.html#inline-if-else-with-conditional-operator
-                 https://stackoverflow.com/questions/39281032/how-to-conditionally-apply-css-classes-in-react-js
               */
 
               <li key={move}>

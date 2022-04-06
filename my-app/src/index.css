@@ -1,5 +1,6 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 17px "American Typewriter", Futura, sans-serif;
+    font-weight: bold;
     margin: 50px;
     color:rgb(55, 52, 97)
   }
@@ -20,16 +21,16 @@ body {
   
   .square {
     background: #f0fafa;
-    border: 2px solid rgb(55, 52, 97);
+    border: 3px solid rgb(55, 52, 97);
     float: left;
     font-size: 21px solid;
-    line-height: 34px;
-    height: 34px;
+    line-height: 74px;
+    height: 74px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    width: 74px;
   }
   
   .square:focus {
